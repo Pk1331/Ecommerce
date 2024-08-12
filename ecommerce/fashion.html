@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fashion</title>
+    <link rel="icon" href="Images/Logos/dress.ico">
+    <link rel="stylesheet" href="fashion.css">
+    <script src="script.js"></script>
+    <script src="https://kit.fontawesome.com/fdcbf47714.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="header"></div>
+    <section>
+        <div class="section2">
+            <div class="container">
+                <template id="card-template">
+                    <div class="card">
+                        <a href="#" class="img-link" target="_blank">
+                            <div class="img"></div>
+                        </a>
+                        <div class="text">
+                            <p class="h3">Product Title</p>
+                            <p class="p">Description</p>
+                            <div class="icon-box">
+                                <button class="cart-button" onclick="startAnimation(this)">
+                                    <span class="button-text">Add to cart</span>
+                                    <i class="fa fa-shopping-cart fa-cart-shopping" aria-hidden="true"></i>
+                                    <i class="fa-solid fa-box"></i>
+                                    <span class="hidden-text">Done</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </template>
+                <script>
+                    const products = [
+                        { title: "Lymio Casual Shirt S|M|XL", description: "Material: Polyester | Pattern: Printed | Fit: Regular Fit | Sleeve: Half Sleeve | Collar: Classic Collar | Length: Standard Length | Country of Origin: India", imageClass: "img1", url: "https://www.amazon.in/Lymio-Casual-Stylish-Printed-Floral/dp/B0BSR2S1ZB" },
+                        { title: "Sunward Clothing Men XL", description: "Pattern: Solid | Fit: Slim Fit | Collar: Stand Collar | Length: Standard Length | Neck Style: DOM | Occasion: Casual | Country of Origin: China", imageClass: "img2", url: "https://www.amazon.in/Sunward-Clothing-T-Shirt-Spring-Breathable/dp/B09LSMXQHP" },
+                        { title: "DHRUVI TRENDZ MEN XL", description: "Material: Rayon | Pattern: Striped | Fit: Regular Fit | Sleeve: Short Sleeve | Collar: Classic | Length: Standard Length | Country of Origin: India.", imageClass: "img3", url: "https://alphastylehub.in/product/dhruvi-trendz-men-summer-shirts-for-men/" },
+                        { title: "MenS Cargo Trousers ", description: "Material: Rayon | Pattern: Striped | Fit: Regular Fit | Sleeve: Short Sleeve | Collar: Classic | Length: Standard Length | Country of Origin: India.", imageClass: "img4", url: "https://www.oppo.com/in/smartphones/series-f/f21s-pro/" },
+                        { title: "Men Solid Sustainable Chinos", description: "Color: Grey | Fit: Regular Fit | Rise: Mid-Rise | Length: Regular | Pattern: Solid | Style: Flat-Front | Feature: Plain | Pockets: 6", imageClass: "img5", url: "https://www.myntra.com/trousers/highlander/highlander-men-tapered-fit-mid-rise-plain-cargos/25483110/buy" },
+                        { title: "Stretch Skinny Denim  Pants", description: "Material: Cotton Blend | Length: Ankle Length | Style: Classic | Closure: Zip Fly and Button Closure | Occasion: Daily Wear | Care: Machine Wash", imageClass: "img6", url: "https://www.amazon.in/Pantete-Pockets-Stretch-Skinny-Fashion/dp/B091Q7LBFF" },
+                        { title: "Granthva Fab Women's Saree", description: "Material: Silk | Weave: Satin | Length: 6 Yards | Occasion: Festival, Wedding | Pattern: Embroidered | Included: With Blouse Piece | Country of Origin: India", imageClass: "img7", url: "https://www.amazon.in/Granthva-Fab-Womens-Sequins-Blouse/dp/B0C5THQZ6T" },
+                        { title: "Printed Women's Casual Wear", description: "Material: Cotton Blend | Length: Midi | Occasion: Party | Sleeve: 3/4 Sleeve | Pattern: Block Print | Style: A-Line | Country of Origin: India", imageClass: "img8", url: "https://www.amazon.in/Printed-Womens-Casual-Western-Dress/dp/B0C1BX7PCD" },
+                        { title: "WOMEN'S Net Punjabi Suit", description: "Material: Pure Net | Length: Maxi | Sleeve: 3/4 Sleeve | Neck Style: Round Neck | Style: A-Line | Country of Origin: India", imageClass: "img9", url: "https://www.amazon.in/SHAFNUFAB%C2%AE-Punjabi-Stitched-Patiyala-Patiyalasuit_SF201299/dp/B0BHDNGJFY" },
+                        { title: "Polo Neck Boxy T-Shirt Top", description: "Material: 95% Cotton, 5% Spandex | Package: 1 T-Shirt | Care: Machine Wash Cold | Fit: Relaxed Fit | Note: Buy a Size Smaller", imageClass: "img10", url: "https://www.ajio.com/buda-jeans-co-polo-neck-boxy-t-shirt-top/p/469353649_ltblue" }
+                    ];
+
+                    const container = document.querySelector('.container');
+                    const cardTemplate = document.querySelector('#card-template').content;
+
+                    products.forEach(product => {
+                        const card = document.importNode(cardTemplate, true);
+                        card.querySelector('.img').classList.add(product.imageClass);
+                        card.querySelector('.h3').textContent = product.title;
+                        card.querySelector('.p').textContent = product.description;
+                        card.querySelector('.img-link').href = product.url;
+                        container.appendChild(card);
+                    });
+                </script>
+            </div>
+        </div>
+    </section>
+    <div id="footer"></div>
+
+    <script>
+        function loadHTML(id, url) {
+            fetch(url)
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById(id).innerHTML = data;
+                })
+                .catch(error => console.error('Error loading HTML:', error));
+        }
+
+        loadHTML('header', './header.html');
+        loadHTML('footer', './footer.html');
+    </script>
+</body>
+</html>

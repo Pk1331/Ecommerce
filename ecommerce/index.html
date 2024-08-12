@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="Images/Logos/favicon.ico">
+    <script src="script.js"></script>
+    <script src="https://kit.fontawesome.com/fdcbf47714.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="header"></div>
+    <br>
+  
+    <br>
+    <section>
+        <div class="section1">
+                <div class="slider-container">
+                    <div class="slider-wrapper">
+                        <a href="Home Appliances.html" class="slider-item" target="_blank">
+                            <img src="Images/Home_Appliances/Bed.webp" alt="Image 1" class="slider-image">
+                        </a>
+                        <a href="fashion.html" class="slider-item" target="_blank">
+                            <img src="Images/fashion/shirt1.jpg" alt="Image 2" class="slider-image">
+                        </a>
+                        <a href="Electronics.html" class="slider-item" target="_blank">
+                            <img src="Images/Mobiles/realmenarzo.png" alt="Image 3" class="slider-image">
+                        </a>
+                        <a href="fashion.html" class="slider-item" target="_blank">
+                            <img src="Images/fashion/phnat2.jpg" alt="Image 4" class="slider-image">
+                        </a>
+                        <a href="Home Appliances.html" class="slider-item" target="_blank">
+                            <img src="Images/Home_Appliances/washing machine.jfif" alt="Image 5" class="slider-image">
+                        </a>
+                        <a href="fashion.html" class="slider-item" target="_blank">
+                            <img src="Images/fashion/dress2.jpg" alt="Image 6" class="slider-image">
+                        </a>
+                        <a href="Home Appliances.html" class="slider-item" target="_blank">
+                            <img src="Images/Home_Appliances/dining1.jpg" alt="Image 7" class="slider-image">
+                        </a>
+                        <a href="Electronics.html" class="slider-item" target="_blank">
+                            <img src="Images/Mobiles/realme11pro.png" alt="Image 8" class="slider-image">
+                        </a>
+                        <a href="fashion.html" class="slider-item" target="_blank">
+                            <img src="Images/fashion/-473Wx593H-469353649-ltblue-MODEL4.avif" alt="Image 9" class="slider-image">
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="dot-container">
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+        </div>
+        <script>
+            function initializeSlider() {
+                const wrapper = document.querySelector('.slider-wrapper');
+                const dots = document.querySelectorAll('.dot');
+                const items = document.querySelectorAll('.slider-item');
+                let currentIndex = 0;
+    
+                function updateSlider() {
+                    wrapper.style.transform = `translateX(-${currentIndex * 100}%)`;
+                    dots.forEach((dot, index) => {
+                        dot.classList.toggle('active', index === currentIndex);
+                    });
+                }
+    
+                function nextSlide() {
+                    currentIndex = (currentIndex + 1) % items.length;
+                    updateSlider();
+                }
+    
+                setInterval(nextSlide, 1500);
+                updateSlider();
+            }
+            document.addEventListener('DOMContentLoaded', initializeSlider);
+        </script>
+        <div class="section2">
+            <div class="container">
+                <template id="card-template">
+                    <div class="card">
+                        <a href="#" class="img-link" target="_blank">
+                            <div class="img"></div>
+                        </a>
+                        <div class="text">
+                            <p class="h3">Product Title</p>
+                            <p class="p">Description</p>
+                            <div class="icon-box">
+                                <button class="cart-button" onclick="startAnimation(this)">
+                                    <span class="button-text">Add to cart</span>
+                                    <i class="fa fa-shopping-cart fa-cart-shopping" aria-hidden="true"></i>
+                                    <i class="fa-solid fa-box"></i>
+                                    <span class="hidden-text">Done</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </template>
+                <script>
+                    const products = [
+                        { title: "Oppo Reno11 5G", description: "8 GB RAM | 256 GB ROM 6.67-inch AMOLED Display 50 MP Rear Camera 5500 mAh Battery", imageClass: "img1", url: "https://www.oppo.com/in/smartphones/series-reno/reno11/" },
+                        { title: "Lymio Casual Shirt S|M|XL", description: "Material: Polyester | Pattern: Printed | Fit: Regular Fit | Sleeve: Half Sleeve | Collar: Classic Collar ", imageClass: "img2", url: "https://www.amazon.in/Lymio-Casual-Stylish-Printed-Floral/dp/B0BSR2S1ZB" },
+                        { title: "Wood King Box Bed", description: "Sales Package: 1 Cot Unit|Bed Type: Platform| Primary Color: Brown | Suitable For: Bedroom, Kids Room", imageClass: "img3", url: "https://www.flipkart.com/neudot-paris-king-engineered-wood-box-bed/p/itmb2b76e67a1966?pid=BDDGG46Q3DQCRJ4A&lid=LSTBDDGG46Q3DQCRJ4AUAESKV&marketplace=FLIPKART&store=wwe%2F7p7&srno=b_1_1&otracker=nmenu_sub_Home%20%26%20Furniture_0_Beds&fm=organic&iid=en_Tu1LrCDejYQqhn-aw5m-WxP7fLq1O50OlcJrVIScbuDYBMWCAETZoAlYVOuQzmnHFo7Vjom_AWhxQLLMUahBkA%3D%3D&ppt=browse&ppn=browse" },
+                        { title: "Men Solid Sustainable Chinos", description: "Color: Grey | Fit: Regular Fit | Rise: Mid-Rise | Length: Regular | Pattern: Solid | Style: Flat-Front | Pockets: 6", imageClass: "img4", url: "https://www.myntra.com/trousers/highlander/highlander-men-tapered-fit-mid-rise-plain-cargos/25483110/buy" },
+                        { title: "Oppo F27 Pro+", description: "8 GB RAM | 256 GB ROM 6.72-inch LCD Display 64 MP Rear Camera 5000 mAh Battery.", imageClass: "img5", url: "https://www.oppo.com/in/smartphones/series-f/f27-pro-plus-5g/" },
+                        { title: "Polo Neck Boxy T-Shirt Top", description: "Material: 95% Cotton, 5% Spandex | Package: 1 T-Shirt | Care: Machine Wash Cold | Fit: Relaxed Fit", imageClass: "img6", url: "https://www.ajio.com/buda-jeans-co-polo-neck-boxy-t-shirt-top/p/469353649_ltblue" },
+                        { title: "Printed Women's Casual Wear", description: "Material: Cotton Blend | Length: Midi | Occasion: Party | Sleeve: 3/4 Sleeve | Pattern: Block Print | Style: A-Line", imageClass: "img7", url: "https://www.amazon.in/Printed-Womens-Casual-Western-Dress/dp/B0C1BX7PCD" },
+                        { title: "3 Seater Sofa", description: "Secondary Material: Solid Wood | Secondary Material Subtype: Meranti Wood | Configuration: Straight", imageClass: "img8", url: "https://www.flipkart.com/flipkart-perfect-homes-bella-leatherette-3-seater-sofa/p/itm11dd0cf9616f2?pid=SOFH2N3V5GYC4BTQ&lid=LSTSOFH2N3V5GYC4BTQNXCKBZ&marketplace=FLIPKART&store=wwe%2Fc3z&srno=b_1_1&otracker=nmenu_sub_Home%20%26%20Furniture_0_Sofa&fm=organic&iid=en_nAYaFJT7rwpVtSpNQZ701nh-DcyCtrCbDTEKdk6NqAhiBP7Hn5Ot8XLCtkMcGaZb5VhLLetOU0oOujgygCIcvvUFjCTyOHoHZs-Z5_PS_w0%3D&ppt=browse&ppn=browse&ssid=7b1jtddgls0000001722401743612" },
+                        { title: "WOMEN'S Net Punjabi Suit", description: "Material: Pure Net | Length: Maxi | Sleeve: 3/4 Sleeve | Neck Style: Round Neck | Style: A-Line", imageClass: "img9", url: "https://www.amazon.in/SHAFNUFAB%C2%AE-Punjabi-Stitched-Patiyala-Patiyalasuit_SF201299/dp/B0BHDNGJFY" },
+                        { title: "Realme Narzo N23", description: "8 GB RAM | 256 GB ROM 6.72-inch LCD Display 64 MP Rear Camera 5000 mAh Battery.", imageClass: "img10", url: "https://www.oneplus.in/oneplus-11r?sku=5011102526" },
+                        { title: "DHRUVI TRENDZ MEN XL", description: "Material: Rayon | Pattern: Striped | Fit: Regular Fit | Sleeve: Short Sleeve | Collar: Classic | Length: Standard Length", imageClass: "img11", url: "https://alphastylehub.in/product/dhruvi-trendz-men-summer-shirts-for-men/" },
+                        { title: "7kg Washing Machine", description: "Technology: Ozone Air Refresh, 6th Sense Soft Move, SteamWash | Display: LED + Touch", imageClass: "img12", url: "https://www.whirlpoolindia.com/xpert-care-7kg-5-star-front-load-washing-machine-with-ozone-air-refresh-technology-and-in-built-heater-t/p?sc=1" },
+                        { title: "Realme 11 Pro 5G", description: "8 GB RAM | 256 GB ROM 6.72-inch LCD Display 64 MP Rear Camera 5000 mAh Battery.    ", imageClass: "img13", url: "https://buy.realme.com/in/goods/635" },
+                        { title: "3 Star  Refrigerator", description: "Energy Rating: 3 Star | Capacity: 192 Litres| Defrost Type: Manual | Shelf Material: Toughened Glass Shelves", imageClass: "img14", url: "https://www.reliancedigital.in/whirlpool-192-litre-3-star-direct-cool-single-door-refrigerator-wine-flower-rain/p/493715199" },
+                        { title: "LYF 32 Inch HD Smart TV", description: "Supported Apps: Prime Video, YouTube, Zee5, Sony Liv| Operating System: Linux | Resolution: 1366 x 768 (HD)", imageClass: "img15", url: "https://www.reliancedigital.in/lyf-81-28-cm-32-inch-hd-smart-tv-ld32hl2000a-black/p/493179512" }
+                    ];
+
+                    const container = document.querySelector('.container');
+                    const cardTemplate = document.querySelector('#card-template').content;
+
+                    products.forEach(product => {
+                        const card = document.importNode(cardTemplate, true);
+                        card.querySelector('.img').classList.add(product.imageClass);
+                        card.querySelector('.h3').textContent = product.title;
+                        card.querySelector('.p').textContent = product.description;
+                        card.querySelector('.img-link').href = product.url;
+                        container.appendChild(card);
+                    });
+                </script>
+            </div>
+        </div>
+    </section>
+    <div id="footer"></div>
+
+    
+    <script>
+        function loadHTML(id, url) {
+            return fetch(url)
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById(id).innerHTML = data;
+                    if (id === 'slider') {
+                        if (typeof initializeSlider === 'function') {
+                            initializeSlider();
+                        } else {
+                            console.error('initializeSlider function not found');
+                        }
+                    }
+                })
+                .catch(error => console.error('Error loading HTML:', error));
+        }
+
+        loadHTML('header', './header.html'),
+        loadHTML('footer', './footer.html')
+    </script>
+</body>
+</html>

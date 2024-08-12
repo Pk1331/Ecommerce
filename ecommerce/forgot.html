@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forgot Password</title>
+    <link rel="icon" href="Images/Logos/Forgot.ico">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f8f9fa;
+            margin: 0;
+        }
+        .forgot-password-container {
+            width: 100%;
+            max-width: 400px;
+            padding: 2rem;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        .forgot-password-container h2 {
+            margin-bottom: 1.5rem;
+            font-size: 24px;
+        }
+        .form-group {
+            margin-bottom: 1rem;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ccc;
+            border-radius: 20px;
+            box-sizing: border-box;
+        }
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 0.75rem;
+            border: none;
+            border-radius: 20px;
+            color: #fff;
+            background-color: #007bff;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 1rem;
+        }
+        .btn:hover {
+            opacity: 0.9;
+        }
+        .back-to-login {
+            display: block;
+            margin-top: 1rem;
+            text-align: center;
+            color: #007bff;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="forgot-password-container">
+        <h2>Forgot Password</h2>
+        <p>Please enter your email address. We will send you a link to reset your password.</p>
+        <form>
+            <div class="form-group">
+                <input type="email" placeholder="Email Address" required>
+            </div>
+            <button type="submit" class="btn">Send Reset Link</button>
+            <a href="login.html" class="back-to-login">Back to Login</a>
+        </form>
+    </div>
+</body>
+</html>

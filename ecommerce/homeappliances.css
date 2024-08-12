@@ -1,0 +1,218 @@
+.section2 .container {
+    display: flex;
+    width: 100%;
+    height: max-content;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 10px auto;
+}
+
+.section2 .container .card {
+    margin: 10px;
+    width: 280px;
+    background-color: white;
+    border-radius: 12px;
+}
+
+.card {
+    width: 280px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0px 0px 14px -2px #bebebe;
+    transition: 0.2s ease-in-out;
+}
+ 
+.card:hover {
+    cursor: pointer;
+}
+
+.card-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.img1, .img2, .img3, .img4, .img5, .img6, .img7, .img8, .img9, .img10 {
+    width: 100%;
+    height: 15em;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    background-size: cover;
+    object-fit: cover;
+    display: flex;
+    align-items: top;
+    justify-content: right;
+}
+
+.img1 {
+    background-image: url(Images/Home_Appliances/washing\ machine.jfif);
+}
+
+.img2 {
+    background-image: url(Images/Home_Appliances/mixi2.webp);
+}
+
+.img3 {
+    background-image: url(Images/Home_Appliances/Fan.jpg);
+}
+
+.img4 {
+    background-image: url(Images/Home_Appliances/fridge.jfif);
+}
+
+.img5 {
+    background-image: url(Images/Home_Appliances/ac2.webp);
+}
+
+.img6 {
+    background-image: url(Images/Home_Appliances/cooker.webp);
+}
+
+.img7 {
+    background-image: url(Images/Home_Appliances/Bed.webp);
+}
+
+.img8 {
+    background-image: url(Images/Home_Appliances/sofa.webp);
+}
+
+.img9 {
+
+        background-image: url(Images/Home_Appliances/tv3.jfif);
+}
+
+.img10 {
+    background-image: url(Images/Home_Appliances/dining1.jpg);
+}
+.text {
+    padding: 7px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: space-around;  
+}
+
+.text .h3 {
+    font-family: system-ui;
+    font-size: medium;
+    font-weight: 600;
+    color: black;
+    text-align: center;
+}
+
+.text .p {
+    font-family: system-ui;
+    color: #999999;
+    font-size: 13px;
+    margin: 0px;
+    text-align: center;
+    padding: 5px;
+}
+
+.icon-box {
+    margin: 10px;
+    padding: 12px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.icon-box .span {
+    font-family: system-ui;
+    font-size: small;
+    font-weight: 500;
+    color: #fff;
+}
+
+.cart-button {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    width: 200px;
+    height: 60px;
+    border: 0;
+    outline: none;
+    background-color: aqua;
+    cursor: pointer;
+    color: black;
+    transition: .3s ease-in-out;
+    overflow: hidden;
+    font-weight: 700;
+    border-radius: 5px;
+}
+
+.cart-button:hover {
+    background-color: aqua;
+}
+
+.cart-button:active {
+    transform: scale(.9);
+}
+
+.fa-cart-shopping, .fa-box {
+    position: absolute;
+    top: 50%;
+    font-size: 2em;
+    transform: translateY(-50%);
+    transition: left 1s ease-in-out, opacity 1s;
+    opacity: 0;
+}
+
+.fa-cart-shopping {
+    left: -50%;
+}
+
+.fa-box {
+    left: -50%;
+    font-size: 1.2em;
+    color: gold;
+}
+
+.cart-button.show-cart .fa-cart-shopping {
+    left: 50%;
+    opacity: 1;
+    transform: translate(-50%, -20%);
+}
+
+.cart-button.show-box .fa-box {
+    left: 50%;
+    opacity: 1;
+    transform: translate(-40%, -50%);
+}
+
+.cart-button.move-right .fa-cart-shopping, 
+.cart-button.move-right .fa-box {
+    left: 150%;
+    opacity: 0;
+}
+
+.cart-button.done {
+    background-color: aqua;
+    color: black;
+    cursor: default;
+}
+
+.hidden-text {
+    display: none;
+}
+
+.cart-button.done .hidden-text {
+    display: inline-block;
+    margin-left: 10px;
+    font-size: 1.5em;
+    position: relative;
+}
+
+.cart-button.done .hidden-text::before {
+    content: '\f00c'; 
+    font-family: FontAwesome;
+    display: inline-block;
+    position: absolute;
+    left: -30px;
+    width: 20px;
+    height: 20px;
+    background: black;
+    color: white;
+    border-radius: 50%;
+    line-height: 20px;
+    text-align: center;
+}

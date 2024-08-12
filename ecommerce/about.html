@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="Images/Logos/about.ico">
+    <script src="https://kit.fontawesome.com/fdcbf47714.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="header"></div>
+    
+    <section class="about-section">
+        <div class="container">
+            <h1>About Us</h1>
+            <p>Welcome to our e-commerce platform, your number one source for all things fashion, electronics, home appliances, and more. We're dedicated to giving you the very best of products, with a focus on quality, customer service, and uniqueness.</p>
+
+            <h2>Our Story</h2>
+            <p>Founded in 2024, our e-commerce platform has come a long way from its beginnings in a small office. When we first started out, our passion for providing the best shopping experience drove us to do intense research, quit our day jobs, and gave us the impetus to turn hard work and inspiration into a booming online store.</p>
+
+            <h2>Our Mission</h2>
+            <p>We aim to offer our customers a variety of the latest products. We’ve come a long way, so we know exactly which direction to take when supplying you with high-quality yet budget-friendly products. We offer all of this while providing excellent customer service and friendly support.</p>
+
+            <h2>Why Shop With Us?</h2>
+            <ul>
+                <li>Wide Range of Products: We offer a diverse selection of items from various categories.</li>
+                <li>Competitive Pricing: We ensure you get the best value for your money.</li>
+                <li>Customer Satisfaction: We prioritize your satisfaction with top-notch service.</li>
+                <li>Secure Shopping: We provide a secure shopping experience with easy payment options.</li>
+            </ul>
+
+            <a href="contact.html" class="contact-link">Contact Us</a>
+        </div>
+    </section>
+    
+    <div id="footer"></div>
+
+    <script>
+        function loadHTML(id, url) {
+            return fetch(url)
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById(id).innerHTML = data;
+                })
+                .catch(error => console.error('Error loading HTML:', error));
+        }
+
+        loadHTML('header', './header.html');
+        loadHTML('footer', './footer.html');
+    </script>
+</body>
+</html>

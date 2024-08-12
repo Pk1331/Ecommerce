@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home & Kichen</title>
+    <link rel="icon" href="Images/Logos/Speaker.ico">
+    <link rel="stylesheet" href="homeappliances.css">
+    <script src="script.js"></script>
+    <script src="https://kit.fontawesome.com/fdcbf47714.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="header"></div>
+    <section>
+        <div class="section2">
+            <div class="container">
+                <template id="card-template">
+                    <div class="card">
+                        <a href="#" class="img-link" target="_blank">
+                            <div class="img"></div>
+                        </a>
+                        <div class="text">
+                            <p class="h3">Product Title</p>
+                            <p class="p">Description</p>
+                            <div class="icon-box">
+                                <button class="cart-button" onclick="startAnimation(this)">
+                                    <span class="button-text">Add to cart</span>
+                                    <i class="fa fa-shopping-cart fa-cart-shopping" aria-hidden="true"></i>
+                                    <i class="fa-solid fa-box"></i>
+                                    <span class="hidden-text">Done</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </template>
+                <script>
+                    const products = [
+                        { title: "7kg 5 Star Front-Load Washing Machine", description: "Technology: Ozone Air Refresh, 6th Sense Soft Move, SteamWash | Display: LED + Touch | Features: Add Garment, Water Spray, Fresh Care", imageClass: "img1", url: "https://www.whirlpoolindia.com/xpert-care-7kg-5-star-front-load-washing-machine-with-ozone-air-refresh-technology-and-in-built-heater-t/p?sc=1" },
+                        { title: "Kutchina mixer grinder 750 watt karizma mixi machine", description: "Brand: KUTCHINA | Color: Purple | Capacity: 1.5 Litres | Included Components: Dry Jar - 1.0 Ltr | Style: Modern | Power Source: Electric", imageClass: "img2", url: "https://www.amazon.in/dp/B0CGDPL7W2/ref=sspa_dk_detail_1?psc=1&pd_rd_i=B0CGDPL7W2&pd_rd_w=civpo&content-id=amzn1.sym.9f1cb690-f0b7-44de-b6ff-1bad1e37d3f0&pf_rd_p=9f1cb690-f0b7-44de-b6ff-1bad1e37d3f0&pf_rd_r=ZD100A8F7XY89XRXDQNY&pd_rd_wg=r4OlZ&pd_rd_r=176b35ed-311c-4ae0-9617-6a2411f3ec12&sp_csd=d2lkZ2V0TmFtZT1zcF9kZXRhaWxfdGhlbWF0aWM"},
+                        { title: "BLDC Ceiling Fan- Moneysaver IS - 28W-AB Brown ", description: "Motor: Energy Efficient BLDC Motor | Power Consumption: 28 Watts | Savings: Up to 1750 Rs. Per Year  | Additional Features: Fan0 with LED Light, ZZ Sleeve", imageClass: "img3", url: "https://orpatgroup.com/product/bldc-ceiling-fan-moneysaver-i-s-28w-ab-brown-with-remote-app-remote/" },
+                        { title: "Whirlpool 192 Litre 3 Star Direct Cool Single Door Refrigerator", description: "Energy Rating: 3 Star | Capacity: 192 Litres | Cooling Type: Direct Cool | Defrost Type: Manual | Shelf Material: Toughened Glass Shelves", imageClass: "img4", url: "https://www.reliancedigital.in/whirlpool-192-litre-3-star-direct-cool-single-door-refrigerator-wine-flower-rain/p/493715199" },
+                        { title: "MarQ Convertible 4-In-1 Cooling 1.5 Ton 3 Star Split Inverter AC", description: "Capacity: 1.5 Ton | Star Rating: 4 Star | Type: Window AC | Brand: Voltas | Coil Material: Aluminium | Usage/Application: Hotel ",imageClass: "img5", url: "https://www.indiamart.com/proddetail/marq-by-flipkart-convertible-4-in-1-cooling-1-5-ton-3-star-split-inverter-ac-white-2850476844412.html" },
+                        { title: "Greenchef Coral Combo 5 L, 3 L, 2 L Outer Lid Pressure Cooker", description: "Sales Package: 2L Pressure Pan, 3L Pressure Cooker, 5L Pressure Cooker, Warranty Card, 2 Lids | Capacity: 5 L, 3 L, 2 L |Height: 20 cm | Weight: 3.6 kg", imageClass: "img6", url: "https://www.flipkart.com/greenchef-coral-combo-5-l-3-2-l-outer-lid-pressure-cooker/p/itm874e062029368?pid=PRCFQ3GFFZKZGHWT&lid=LSTPRCFQ3GFFZKZGHWTGYS6DD&marketplace=FLIPKART&store=upp%2Ftnx%2Fgsl&spotlightTagId=BestsellerId_upp%2Ftnx%2Fgsl&srno=b_1_5&otracker=nmenu_sub_Home%20%26%20Furniture_0_Pressure%20Cookers&fm=organic&iid=2e30e457-965a-4717-bba7-44d100fbdcc0.PRCFQ3GFFZKZGHWT.SEARCH&ppt=browse&ppn=browse&ssid=e86rh96o8w0000001722400800910" },
+                        { title: "NEUDOT PARIS KING Engineered Wood King Box Bed", description: "Sales Package: 1 Cot Unit| Bed Size: King | Bed Type: Platform| Primary Color: Brown | Suitable For: Bedroom, Kids Room", imageClass: "img7", url: "https://www.flipkart.com/neudot-paris-king-engineered-wood-box-bed/p/itmb2b76e67a1966?pid=BDDGG46Q3DQCRJ4A&lid=LSTBDDGG46Q3DQCRJ4AUAESKV&marketplace=FLIPKART&store=wwe%2F7p7&srno=b_1_1&otracker=nmenu_sub_Home%20%26%20Furniture_0_Beds&fm=organic&iid=en_Tu1LrCDejYQqhn-aw5m-WxP7fLq1O50OlcJrVIScbuDYBMWCAETZoAlYVOuQzmnHFo7Vjom_AWhxQLLMUahBkA%3D%3D&ppt=browse&ppn=browse" },
+                        { title: "Homes Bella Leatherette 3 Seater Sofa", description: "Secondary Material: Solid Wood | Secondary Material Subtype: Meranti Wood | Configuration: Straight | Upholstery Material: Imitation Leather", imageClass: "img8", url: "https://www.flipkart.com/flipkart-perfect-homes-bella-leatherette-3-seater-sofa/p/itm11dd0cf9616f2?pid=SOFH2N3V5GYC4BTQ&lid=LSTSOFH2N3V5GYC4BTQNXCKBZ&marketplace=FLIPKART&store=wwe%2Fc3z&srno=b_1_1&otracker=nmenu_sub_Home%20%26%20Furniture_0_Sofa&fm=organic&iid=en_nAYaFJT7rwpVtSpNQZ701nh-DcyCtrCbDTEKdk6NqAhiBP7Hn5Ot8XLCtkMcGaZb5VhLLetOU0oOujgygCIcvvUFjCTyOHoHZs-Z5_PS_w0%3D&ppt=browse&ppn=browse&ssid=7b1jtddgls0000001722401743612" },
+                        { title: "LYF 81.28 cm (32 Inch) HD Smart TV", description: "Supported Apps: Prime Video, YouTube, Zee5, Sony Liv, Eros Now, Hungama Play, TG,| Operating System: Linux | Resolution: 1366 x 768 (HD)", imageClass: "img9", url: "https://www.reliancedigital.in/lyf-81-28-cm-32-inch-hd-smart-tv-ld32hl2000a-black/p/493179512" },
+                        { title: "Sheesham Wood Four Seater Dining Table", description: "Color: Warm Chestnut Finish | Brand: VK Furniture | Size: 4 Seater | Dimensions (L x W x H): 114.3 x 76.2 x 76.2 cm | Care Instructions: Wipe Clean with Dry Cloth", imageClass: "img10", url: "https://www.amazon.in/VK-Furniture-Sheesham-Seater-Dining/dp/B0BGSFWKGT" }
+                    ];
+
+                    const container = document.querySelector('.container');
+                    const cardTemplate = document.querySelector('#card-template').content;
+
+                    products.forEach(product => {
+                        const card = document.importNode(cardTemplate, true);
+                        card.querySelector('.img').classList.add(product.imageClass);
+                        card.querySelector('.h3').textContent = product.title;
+                        card.querySelector('.p').textContent = product.description;
+                        card.querySelector('.img-link').href = product.url;
+                        container.appendChild(card);
+                    });
+                </script>
+            </div>
+        </div>
+    </section>
+    <div id="footer"></div>
+
+    <script>
+        function loadHTML(id, url) {
+            fetch(url)
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById(id).innerHTML = data;
+                })
+                .catch(error => console.error('Error loading HTML:', error));
+        }
+
+        loadHTML('header', './header.html');
+        loadHTML('footer', './footer.html');
+    </script>
+</body>
+</html>

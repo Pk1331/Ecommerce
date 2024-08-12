@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up Page</title>
+    <link rel="icon" href="Images/Logos/signup.ico">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f8f9fa;
+            margin: 0;
+        }
+        .signup-container {
+            width: 100%;
+            max-width: 500px;
+            padding: 2rem;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 4px 4px 4px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        .signup-container h2 {
+            margin-bottom: 1.5rem;
+            font-size: 24px;
+        }
+        .form-group {
+            margin-bottom: 1rem;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ccc;
+            border-radius: 20px;
+            box-sizing: border-box;
+        }
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 0.75rem;
+            border: none;
+            border-radius: 20px;
+            color: #fff;
+            background-color: #007bff;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 1rem;
+            box-sizing: 0 5px grey;
+        }
+        .btn:active
+        {
+            transform: translateY(5px);
+            box-shadow: 0 5px black;
+        }
+        .signup-link {
+            display: block;
+            margin-top: 1rem;
+            text-align: center;
+            color: #007bff;
+            text-decoration: none;
+        }
+        .btn-social {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.75rem;
+            border: 1px solid #ccc;
+            border-radius: 20px;
+            background-color: #fff;
+            margin-top: 1rem;
+            cursor: pointer;
+            width:100%;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .btn-social img {
+            margin-right: 0.5rem;
+        }
+        .btn-social:hover, .btn:hover {
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+    <div class="signup-container">
+        <h2>Sign Up</h2>
+        <form>
+            <div class="form-group">
+                <input type="text" placeholder="Full Name" required>
+            </div>
+            <div class="form-group">
+                <input type="email" placeholder="Email Address" required>
+            </div>
+            <div class="form-group">
+                <input type="password" placeholder="Password" required>
+            </div>
+            <div class="form-group">
+                <input type="password" placeholder="Confirm Password" required>
+            </div>
+            <button type="submit" class="btn">Sign Up</button>
+            <a href="login.html" class="signup-link">Already have an account? Log In</a>
+        </form>
+        <div>
+            <button class="btn-social">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple" width="15">
+                Sign Up with Apple
+            </button>
+            <button class="btn-social">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="Google" width="20">
+                Sign Up with Google
+            </button>
+        </div>
+    </div>
+</body>
+</html>

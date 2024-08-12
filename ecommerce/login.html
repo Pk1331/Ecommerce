@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="icon" href="Images/Logos/login.ico">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f8f9fa;
+            margin: 0;
+        }
+        .login-container {
+            width: 100%;
+            max-width: 400px;
+            padding: 2rem;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 10px 8px 5px black;
+            text-align: center;
+        }
+        .login-container h2 {
+            margin-bottom: 1.5rem;
+            font-size: 24px;
+        }
+        .form-group {
+            margin-bottom: 1rem;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ccc;
+            border-radius: 20px;
+            box-sizing: border-box;
+        }
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 0.75rem;
+            border: none;
+            border-radius: 20px;
+            color: #fff;
+            background-color: #007bff;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 1rem;
+            box-shadow: 0px 5px grey;
+        }
+        .btn:active
+        {
+            transform: translateY(2px);
+            box-shadow:0px 5px black;
+        }
+        .btn-social {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            justify-content: center;
+            padding: 0.75rem;
+            border: 1px solid #ccc;
+            border-radius: 20px;
+            background-color: #fff;
+            margin-top: 1rem;
+            cursor: pointer;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .btn-social img {
+            margin-right: 0.5rem;
+        }
+        .forgot-password {
+            display: block;
+            margin-top: 1rem;
+            text-align: right;
+            color: #007bff;
+            text-decoration: none;
+        }
+        .signup-link {
+            display: block;
+            margin-top: 1rem;
+            text-align: center;
+            color: #007bff;
+            text-decoration: none;
+        }
+        .btn-social:hover, .btn:hover {
+            opacity: 0.9;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h2>Login</h2>
+        <form>
+            <div class="form-group">
+                <input type="text" placeholder="Username" required>
+            </div>
+            <div class="form-group">
+                <input type="password" placeholder="Password" required>
+            </div>
+            <a href="forgot.html" class="forgot-password" target="_blank">Forgot Password?</a>
+            <button type="submit" class="btn">Login</button>
+            <a href="signup.html" class="signup-link" target="_blank">Don't have an account? Sign Up</a>
+        </form>
+        <div>
+            <button class="btn-social">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple" width="20">
+                Login with Apple
+            </button>
+            <button class="btn-social">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="Google" width="20">
+                Login with Google
+            </button>
+        </div>
+    </div>
+</body>
+</html>

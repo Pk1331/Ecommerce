@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="Images/Logos/customer support.ico">
+    <script src="https://kit.fontawesome.com/fdcbf47714.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="header"></div>
+    
+    <section class="contact-section">
+        <div class="container">
+            <h1>Contact Us</h1>
+            <p>If you have any questions or comments, please don't hesitate to contact us. We are always here to help and ensure you have a great experience shopping with us.</p>
+
+            <div class="contact-info">
+                <p><strong>Email:</strong>andepavan37@gmail.com</p>
+                <p><strong>Phone:</strong> +91-6281601463</p>
+            </div>
+        </div>
+    </section>
+    
+    <div id="footer"></div>
+
+    <script>
+        function loadHTML(id, url) {
+            return fetch(url)
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById(id).innerHTML = data;
+                })
+                .catch(error => console.error('Error loading HTML:', error));
+        }
+
+        loadHTML('header', './header.html');
+        loadHTML('footer', './footer.html');
+    </script>
+</body>
+</html>

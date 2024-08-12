@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobiles</title>
+    <link rel="icon" href="Images/Logos/mobile.ico">
+    <link rel="stylesheet" href="electronics.css">
+    <script src="script.js"></script>
+    <script src="https://kit.fontawesome.com/fdcbf47714.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="header"></div>
+    <section>
+        <div class="section2">
+            <div class="container">
+                <template id="card-template">
+                    <div class="card">
+                        <a href="#" class="img-link" target="_blank">
+                            <div class="img"></div>
+                        </a>
+                        <div class="text">
+                            <p class="h3">Product Title</p>
+                            <p class="p">Description</p>
+                            <div class="icon-box">
+                                <button class="cart-button" onclick="startAnimation(this)">
+                                    <span class="button-text">Add to cart</span>
+                                    <i class="fa fa-shopping-cart fa-cart-shopping" aria-hidden="true"></i>
+                                    <i class="fa-solid fa-box"></i>
+                                    <span class="hidden-text">Done</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </template>
+                <script>
+                    const products = [
+                        { title: "Oppo Reno11 5G", description: "8 GB RAM | 256 GB ROM 6.67-inch AMOLED Display 50 MP Rear Camera 5500 mAh Battery", imageClass: "img1", url: "https://www.oppo.com/in/smartphones/series-reno/reno11/" },
+                        { title: "Oppo F25 5G", description: "8 GB RAM | 256 GB ROM 6.43-inch AMOLED Display 64 MP Rear Camera 5000 mAh Battery", imageClass: "img2", url: "https://www.oppo.com/in/smartphones/series-f/f25-pro-5g/" },
+                        { title: "Oppo F23 5G", description: "8 GB RAM | 256 GB ROM 6.72-inch LCD Display 64 MP Rear Camera 5000 mAh Battery.", imageClass: "img3", url: "https://www.oppo.com/in/smartphones/series-f/f23-5g/" },
+                        { title: "Oppo F21s Pro", description: "8 GB RAM | 256 GB ROM 6.72-inch LCD Display 64 MP Rear Camera 5000 mAh Battery.", imageClass: "img4", url: "https://www.oppo.com/in/smartphones/series-f/f21s-pro/" },
+                        { title: "Oppo F27 Pro+", description: "8 GB RAM | 256 GB ROM 6.72-inch LCD Display 64 MP Rear Camera 5000 mAh Battery.", imageClass: "img5", url: "https://www.oppo.com/in/smartphones/series-f/f27-pro-plus-5g/" },
+                        { title: "Oppo F21s Pro 5G", description: "8 GB RAM | 256 GB ROM 6.72-inch LCD Display 64 MP Rear Camera 5000 mAh Battery.6", imageClass: "img6", url: "https://www.oppo.com/in/smartphones/series-f/f21s-pro-5g/" },
+                        { title: "iQOO 12", description: "8 GB RAM | 256 GB ROM 6.72-inch LCD Display 64 MP Rear Camera 5000 mAh Battery.7", imageClass: "img7", url: "https://shop.iqoo.com/in/product/2041?skuId=8253" },
+                        { title: "iPhone 13", description: "8 GB RAM | 256 GB ROM 6.72-inch LCD Display 64 MP Rear Camera 5000 mAh Battery.", imageClass: "img8", url: "https://www.apple.com/in/shop/buy-iphone/iphone-13" },
+                        { title: "Oneplus 11 5G", description: "8 GB RAM | 256 GB ROM 6.72-inch LCD Display 64 MP Rear Camera 5000 mAh Battery.", imageClass: "img9", url: "https://www.oneplus.in/oneplus-11r?sku=5011102526" },
+                        { title: "Realme Narzo N63", description: "8 GB RAM | 256 GB ROM 6.72-inch LCD Display 64 MP Rear Camera 5000 mAh Battery.", imageClass: "img10", url: "https://buy.realme.com/in/goods/699" }
+                    ];
+
+                    const container = document.querySelector('.container');
+                    const cardTemplate = document.querySelector('#card-template').content;
+
+                    products.forEach(product => {
+                        const card = document.importNode(cardTemplate, true);
+                        card.querySelector('.img').classList.add(product.imageClass);
+                        card.querySelector('.h3').textContent = product.title;
+                        card.querySelector('.p').textContent = product.description;
+                        card.querySelector('.img-link').href = product.url;
+                        container.appendChild(card);
+                    });
+                </script>
+            </div>
+        </div>
+    </section>
+    <div id="footer"></div>
+
+    <script>
+        function loadHTML(id, url) {
+            fetch(url)
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById(id).innerHTML = data;
+                })
+                .catch(error => console.error('Error loading HTML:', error));
+        }
+
+        loadHTML('header', './header.html');
+        loadHTML('footer', './footer.html');
+    </script>
+</body>
+</html>
